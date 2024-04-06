@@ -12,7 +12,7 @@ export default class CreatePost{
 		}
 
 		catch (error) {
-			return response.status(500).json({ error: error.message });
+			return response.status(500).json({ error: error });
 		}
 	}
 

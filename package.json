@@ -1,6 +1,6 @@
 {
   "name": "clean-architecture-example",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Destinado a exemplificar o fluxo de uma API NodeJs baseada em arquitetura limpa.",
   "main": "server.ts",
   "scripts": {

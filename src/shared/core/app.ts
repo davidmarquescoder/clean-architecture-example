@@ -7,7 +7,7 @@ import cors from 'cors';
 dontenv.config();
 
 // Imports Routes
-import router from '../../modules/posts/infra/http/routes/posts.routes';
+import router from '../../modules/posts/infra/http/routes/user.routes';
 
 
 class App{
@@ -32,7 +32,7 @@ class App{
 	}
 
 	routes(){
-		this.server.use('/api/v1.0.1', router);
+		this.server.use('/api/v1/users', router);
 	}
 }
 

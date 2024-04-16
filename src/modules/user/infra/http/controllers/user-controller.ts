@@ -9,7 +9,7 @@ const userService = new UserService(userRepository);
 
 export default class UserController{
 
-	static async NewPost (request: Request, response: Response): Promise<Response> {
+	static async create (request: Request, response: Response): Promise<Response> {
 		const { name } = request.body;
 
 		try{

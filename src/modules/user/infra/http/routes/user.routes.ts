@@ -2,11 +2,11 @@
 import { Router } from 'express';
 
 // Controllers
-import CreatePost from '../controllers/user-controller';
+import UserController from '../controllers/user-controller';
 
 
 const router = Router();
 
-router.post('/', CreatePost.NewPost);
+router.post('/', UserController.create);
 
 export default router;

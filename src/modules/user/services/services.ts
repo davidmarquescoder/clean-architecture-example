@@ -2,6 +2,7 @@
 import { User } from '../entities/user';
 import IUserRepository from '../infra/repositories/IRepository';
 import { CreateRequestDTO } from './createDTO';
+import bcrypt from 'bcrypt';
 
 
 class Service{
@@ -14,8 +15,15 @@ class Service{
 			throw new Error('User already exists.');
 		}
 
+		data.password = await this.hash(data.password);
+
 		const user = new User(data);
 		await this.userRepository.save(user);
+	}
+
+	async hash(password: string): Promise<string>{
+		const salt = await bcrypt.genSalt(12);
+		return await bcrypt.hash(password, salt);
 	}
 }
 

@@ -1,6 +1,6 @@
 // Modules imports
 import { User } from '../entities/user';
-import IUserRepository from '../infra/repositories/IUserRepository';
+import IUserRepository from '../infra/repositories/IRepository';
 import { CreateUserRequestDTO } from './CreateUserDTO';
 
 

@@ -1,6 +1,6 @@
 // Modules Imports
 import { Request, Response } from 'express';
-import UserRepository from '../../repositories/UserRepository';
+import UserRepository from '../../repositories/Repository';
 import UserService from '../../../services/UserService';
 
 const userRepository = new UserRepository();

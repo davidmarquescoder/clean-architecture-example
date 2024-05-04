@@ -1,9 +1,11 @@
 // Modules Imports
 import { Request, Response } from 'express';
-import Repository from '../../repositories/repository';
+import { PrismaClient } from '@prisma/client';
+import Repository from '../../repositories/Repository';
 import Service from '../../../services/services';
 
-const repository = new Repository();
+const prismaClient = new PrismaClient();
+const repository = new Repository(prismaClient);
 const service = new Service(repository);
 
 export default class Controllers {

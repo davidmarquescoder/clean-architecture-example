@@ -1,6 +1,6 @@
 // Modules Imports
-import { User } from '../../../entities/user';
-import IUserRepository from '../../../repositories/IUserRepository';
+import { User } from '../../entities/user';
+import IUserRepository from '../../repositories/IUserRepository';
 import { PrismaClient } from '@prisma/client';
 
 

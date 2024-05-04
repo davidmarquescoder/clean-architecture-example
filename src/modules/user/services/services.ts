@@ -1,13 +1,13 @@
 // Modules imports
 import { User } from '../entities/user';
-import IUserRepository from '../repositories/IUserRepository';
-import { CreateUserRequestDTO } from './CreateUserDTO';
+import IUserRepository from '../infra/repositories/IRepository';
+import { CreateRequestDTO } from './createDTO';
 
 
-class UserService{
+class Service{
 	constructor(private userRepository: IUserRepository){}
 
-	async createUser(data: CreateUserRequestDTO): Promise<void>{
+	async create(data: CreateRequestDTO): Promise<void>{
 		const userAlreadyExists = await this.userRepository.findByEmail(data.email);
 
 		if(userAlreadyExists){
@@ -19,4 +19,4 @@ class UserService{
 	}
 }
 
-export default UserService;
+export default Service;

@@ -1,12 +1,12 @@
 // Modules Imports
 import { Request, Response } from 'express';
-import UserRepository from '../../repositories/Repository';
-import UserService from '../../../services/UserService';
+import Repository from '../../repositories/repository';
+import Service from '../../../services/services';
 
-const userRepository = new UserRepository();
-const userService = new UserService(userRepository);
+const repository = new Repository();
+const service = new Service(repository);
 
-export default class UserController {
+export default class Controllers {
 	static async create(request: Request, response: Response): Promise<Response> {
 
 		const data = {
@@ -18,7 +18,7 @@ export default class UserController {
 		};
 
 		try {
-			await userService.createUser(data);
+			await service.create(data);
 			return response.status(201).json({ msg: 'User Created!' });
 		}
 		catch (error) {

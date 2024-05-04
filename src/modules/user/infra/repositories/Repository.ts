@@ -1,6 +1,6 @@
 // Modules Imports
 import { User } from '../../entities/user';
-import IUserRepository from './IRepository';
+import IRepository from './IRepository';
 import { PrismaClient } from '@prisma/client';
 
 
@@ -30,7 +30,7 @@ class UserDB {
 }
 
 
-class UserRepository implements IUserRepository {
+class Repository implements IRepository {
 	async findByEmail(email: string): Promise<User | null> {
 		const userExists = UserDB.findByEmail(email);
 		return userExists;
@@ -42,4 +42,4 @@ class UserRepository implements IUserRepository {
 	}
 }
 
-export default UserRepository;
+export default Repository;

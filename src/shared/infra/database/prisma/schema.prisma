@@ -15,7 +15,10 @@ datasource db {
 
 // Models
 model User {
-  id Int @id @default(autoincrement())
+  id String @id @default(uuid())
   name String
+  email String
+  password String
+  phone String
   createdAt DateTime @default(now())
 }
